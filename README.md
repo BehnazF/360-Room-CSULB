@@ -1,6 +1,8 @@
 
-Please note that you have three different setup options here (you can enable each option and use it in your project):
+**360 ROOM, CSULB, UNITY SETUP**
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
+
+Please note that you have three different setup options here (you can enable each option and use it in your project):
 
 1. Room Simple:
     has a basic image texture. It responds to Arduino input (pressing the button makes the ​room rotates in the opposite direction). 
