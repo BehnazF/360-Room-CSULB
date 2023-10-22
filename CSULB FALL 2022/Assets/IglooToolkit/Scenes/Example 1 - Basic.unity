@@ -1189,6 +1189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room Simple
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
 --- !u!850595691 &1309616360

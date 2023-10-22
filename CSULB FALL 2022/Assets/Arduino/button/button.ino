@@ -17,13 +17,13 @@ void loop(){
 
     if (digitalRead(BUTTON_PIN) == HIGH){
       digitalWrite(LED_PIN,HIGH);
-      Serial.write(1);
+      Serial.write(50);
       Serial.flush();
       delay(20);
     }
     else {
       digitalWrite(LED_PIN,LOW);
-      Serial.write(2);
+      Serial.write(60);
       Serial.flush();
       delay(20);
     }
