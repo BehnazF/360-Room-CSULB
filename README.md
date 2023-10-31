@@ -1,7 +1,5 @@
 
-![img](C:/Users/farah/Desktop/CSULB/DESN 581/Igloo Room/Unity01.png)
-<img src="C:/Users/farah/Desktop/CSULB/DESN 581/Igloo Room/Unity01.png" width="128"/>
-![unityimg](/repository/Assets/screenshotsUnity01.png?raw=true "Unity image")
+![img](/repository/Assets/screenshotsUnity01.png?raw=true "Unity image")
 
 **360 ROOM, CSULB, UNITY SETUP**
 
