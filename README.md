@@ -1,5 +1,5 @@
 
-![Alt Text](CSULB FALL 2022/Assets/Unity01.png)
+![Alt Text](CSULB FALL 2022/Unity01.png)
 
 
 **360 ROOM, CSULB, UNITY SETUP**
