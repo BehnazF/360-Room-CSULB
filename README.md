@@ -8,7 +8,11 @@
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
 
-The main scenes is under "Scenes"> "Example1". 
+- Download the entire package
+- use "Unreal-Unity-DocsAndToolkit(1).zip" and "Unity Game Engine Camera System" to install all requirements for installing Igloo Toolkit in your Unity
+- Prepare your videos: Video size: 8000 x 1000 (Quicktime .MOV)
+- Using Unity Hub open "CSULB Fall 2022"
+- The main scenes is under "Scenes"> "Example1". 
 
 Please note that you have three different setup options here (you can enable each option and use it in your project):
 
