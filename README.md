@@ -1,5 +1,5 @@
 
-![img](/CSULB FALL 2022/Assets/screenshots/Unity01.png?raw=true "Unity image")
+![img](/CSULB FALL 2022/repository/Assets/screenshots/Unity01.png?raw=true "Unity image")
 
 
 **360 ROOM, CSULB, UNITY SETUP**
