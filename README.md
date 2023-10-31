@@ -2,7 +2,7 @@
 
 **360 ROOM, CSULB, UNITY SETUP**
 
-![Alt Text](/repository/Assets/Unity01.png)
+![Alt Text](/CSULB/DESN 581/Igloo Room/CSULB FALL 2022/Assets/Unity01.png)
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
 
