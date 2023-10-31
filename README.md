@@ -18,11 +18,11 @@ Please note that you have three different setup options here (you can enable eac
 
 
 **1. "Room Simple" will respond to buttons inputs:**
-    - you have to select ""Room Simple" on the Hierarchy menu and click diplay on inspector (turn "Room with Graph Shader off")
-    - room has a basic render texture (material) using Universal Render Pipelinie.
-    - video content responds to Arduino input (pressing two buttons make videos to change). 
-    - note: Select "Room Simple" in Unity and go to "inspector"> "Arduino to Unity Simple (Script)": you have to change the "serial port name". eg. "COM6" to your port number.
-    - note: Select "Room Simple" > "inspector" > "Video Player": you will also need to add four videos under video clips. 
+-  you have to select ""Room Simple" on the Hierarchy menu and click diplay on inspector (turn "Room with Graph Shader off")
+-  room has a basic render texture (material) using Universal Render Pipelinie.
+-  video content responds to Arduino input (pressing two buttons make videos to change). 
+-  note: Select "Room Simple" in Unity and go to "inspector"> "Arduino to Unity Simple (Script)": you have to change the "serial port- ame". eg. "COM6" to your port number.
+-  note: Select "Room Simple" > "inspector" > "Video Player": you will also need to add four videos under video clips. 
     
    -  button 1 button 2
    -     [0]       [0]
