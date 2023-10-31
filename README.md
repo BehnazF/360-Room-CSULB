@@ -27,10 +27,8 @@ Please note that you have three different setup options here (you can enable eac
    -     [1]       [0] 
        Four different combinations of buttons could activat different videos 
 
-
-    - In case you like to learn about displaying video in a surface in Unity using Render Texture, you can watch this tutorial: https://www.youtube.com/watch?v=KG2aq_CY7pU&ab_channel=Unity
-
-    - For wiring and explanation of ultrasonic sensor you can read this: https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/
+- In case you like to learn about displaying video in a surface in Unity using Render Texture, you can watch this tutorial: https://www.youtube.com/watch?v=KG2aq_CY7pU&ab_channel=Unity
+- For wiring and explanation of ultrasonic sensor you can read this: https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/
 
 ![GraphShader](arduinoUltrasonic.png)
 
