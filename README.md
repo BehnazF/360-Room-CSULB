@@ -30,19 +30,21 @@ Please note that you have three different setup options here (you can enable eac
    -     [0]       [1]
    -     [1]       [0] 
        Four different combinations of buttons could activat different videos 
-
 - In case you like to learn about displaying video in a surface in Unity using Render Texture, you can watch this tutorial: https://www.youtube.com/watch?v=KG2aq_CY7pU&ab_channel=Unity
 - For wiring and explanation of ultrasonic sensor you can read this: https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/
 
-![GraphShader](arduinoUltrasonic.png)
+![Buttons](arduinoButtons.png)
+
 
 
 **2. "Room with Graph Shader":**
 - you have to select "Room with Graph Shader" on the Hierarchy menu and click diplay on inspector (turn "Room Simple off")
 - This room has a basic graph shader with a glowing effect which respond to ultrasonic sensor value (distance). 
 - Shader Graph has two inputs: Texture2D which is our "Room RT" (Render Texture) and "Sensor Value" which comes from our sensor. Sensor value has been clamped and remaped in order to manipulate the color of fragment shador.
+![GraphShader](arduinoUltrasonic.png)
 - Please note for Graph Shaders to be working you need to install Universal Render Pipeline. Here is a basic tutorial on Graph Shaders: https://www.youtube.com/watch?v=Ar9eIn4z6XE
 - Here is the instruction on how to install the Universal Render Pipeline into an existing Project: https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/InstallURPIntoAProject.html
+
 
 ![GraphShader](UnityScreenshot02.png)
 
