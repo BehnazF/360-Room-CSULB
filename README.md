@@ -20,7 +20,7 @@ Please note that you have three different setup options here (you can enable eac
     - note: Select "Room Simple" in Unity and go to "inspector"> "Arduino to Unity Simple (Script)": you have to change the "serial port name". eg. "COM6" to your port number.
     - note: Select "Room Simple" > "inspector" > "Video Player": you will also need to add four videos under video clips. 
     
-    button 1 button 2
+   -  button 1 button 2
    -     [0]       [0]
    -     [1]       [1]
    -     [0]       [1]
