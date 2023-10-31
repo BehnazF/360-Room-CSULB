@@ -1,5 +1,5 @@
 
-![Alt Text](repository/Unity01.png)
+![Alt Text](Unity01.png)
 
 
 **360 ROOM, CSULB, UNITY SETUP**
