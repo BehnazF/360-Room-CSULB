@@ -19,9 +19,12 @@ Please note that you have three different setup options here (you can enable eac
     *note you have to change the "port name". eg. "COM6" to your port number.
     *you will also need to add four videos 
 
+
     For displaying video in surface of the room using Render Texture, you can watch this tutorial: https://www.youtube.com/watch?v=KG2aq_CY7pU&ab_channel=Unity
 
     Using ultrasonic sensor: https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/
+![GraphShader](arduinoUltrasonic.png)
+
 
 2. Room with Graph Shader: 
     has a basic graph shader with a glowing effect which respond to ultrasonic sensor value (distance). 
