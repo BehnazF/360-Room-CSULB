@@ -21,10 +21,10 @@ Please note that you have three different setup options here (you can enable eac
     - note: Select "Room Simple" > "inspector" > "Video Player": you will also need to add four videos under video clips. 
     
     button 1 button 2
-       [0]       [0]
-       [1]       [1]
-       [0]       [1]
-       [1]       [0] 
+   -     [0]       [0]
+   -     [1]       [1]
+   -     [0]       [1]
+   -     [1]       [0] 
        Four different combinations of buttons could activat different videos 
 
 
