@@ -1,8 +1,9 @@
 
+![Alt Text](CSULB FALL 2022/Assets/Unity01.png)
+
 
 **360 ROOM, CSULB, UNITY SETUP**
 
-![Alt Text](/360 Room CSULB/CSULB FALL 2022/Assets/Unity01.png)
 
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
