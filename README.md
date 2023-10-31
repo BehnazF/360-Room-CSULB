@@ -1,5 +1,6 @@
 
-![gif](http://i.imgur.com/9AfoxGo.gif)
+![img](C:/Users/farah/Desktop/CSULB/DESN 581/Igloo Room/Unity01.png)
+
 **360 ROOM, CSULB, UNITY SETUP**
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
