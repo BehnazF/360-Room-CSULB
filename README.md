@@ -4,6 +4,7 @@
 
 **360 ROOM, CSULB, UNITY SETUP**
 
+- Please note you need to have Blender installed.(Blender)[https://www.blender.org/download/] You also use Unity version 2021.3.0f1.
 
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
