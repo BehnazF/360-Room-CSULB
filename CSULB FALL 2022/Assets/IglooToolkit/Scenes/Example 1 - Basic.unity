@@ -1336,7 +1336,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: afdf2571be4240247b0092e1dbef46ac, type: 3}
   - {fileID: 32900000, guid: afdf2571be4240247b0092e1dbef46ac, type: 3}
   _showDebugUI: 1
-  _serialPortIdentifier: COM4
+  _serialPortIdentifier: COM5
   _shaderProperty: _SensorValue
   _material: {fileID: 2100000, guid: 8a1331fa2e35cd34b96f59530bacc16a, type: 2}
 --- !u!1 &1575162757
@@ -1960,9 +1960,9 @@ MonoBehaviour:
   - {fileID: 32900000, guid: b5cd86ae67c288c48b37d9823036992a, type: 3}
   - {fileID: 32900000, guid: abfa725b0cb5a1a4eabb808220fb5684, type: 3}
   - {fileID: 32900000, guid: afdf2571be4240247b0092e1dbef46ac, type: 3}
-  - {fileID: 32900000, guid: abfa725b0cb5a1a4eabb808220fb5684, type: 3}
+  - {fileID: 32900000, guid: afdf2571be4240247b0092e1dbef46ac, type: 3}
   _showDebugUI: 1
-  _serialPortIdentifier: COM4
+  _serialPortIdentifier: COM5
 --- !u!328 &1921342695
 VideoPlayer:
   m_ObjectHideFlags: 0
