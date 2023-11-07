@@ -4,8 +4,6 @@
 
 **360 ROOM, CSULB, UNITY SETUP**
 
-- Please note you need to have Blender installed.https://www.blender.org/download/ You also use Unity version 2021.3.0f1.
-
 
 This project aims to help my students at CSULB for setting up content for Igloo 360 Room:
 
@@ -14,6 +12,9 @@ This project aims to help my students at CSULB for setting up content for Igloo 
 - Prepare your videos: Video size: 8000 x 1000 (Quicktime .MOV)
 - Using Unity Hub open "CSULB Fall 2022"
 - The main scenes is under "Scenes"> "Example1". 
+- Please note you need to have Blender installed. https://www.blender.org/download/ You also use Unity version 2021.3.0f1.
+
+
 
 Please note that you have three different setup options here (you can enable each option and use it in your project):
 
