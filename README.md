@@ -50,3 +50,16 @@ Please note that you have three different setup options here (you can enable eac
 
 ![GraphShader](UnityScreenshot02.png)
 
+**3. "Room with GS Pixelating based on Audio":**
+- This room will be interactive to audio level.
+- As you make audio the video is getting pixelatted. I used a library called "Lasp" for tracking audio and using gain to pixelate the texture2D in Shader Graph.
+- https://github.com/keijiro/Lasp
+- Please note that under Audio Source we have "Audio Level Tracker", where I unchecked the "Auto Gain". You can change the Gain(db) to fine tube the value of your audio sensivity.
+- Under "Inspector" enable "Room with GS Pixelating based on Audio. There is a scrip called "Send Audio to GS" which allow reading the audiolevel from Lasp Library and send it to GraphShader as "_audioLevel". 
+- In Shader Graph, we are changing the value of pixellation by the audio level recieved from the microphone of the laptop. You can add any other microphone as your input in the room and capture the audio.   
+- ![GraphShader](ShaderGraphAudio.png)
+- ![GraphShader](ShaderGraphAudio.gif)
+
+
+**3."Room with TUI"**
+This is still under development...  

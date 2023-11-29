@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Room Material
-  m_Shader: {fileID: -6465566751694194690, guid: 9ede314b1a167d34980d43fb47237f92, type: 3}
+  m_Name: TUI material
+  m_Shader: {fileID: -6465566751694194690, guid: 15a517bb880b8724ea1bddf4e120bfe0, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _FLIPBOOKBLENDING_OFF
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -46,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8400000, guid: 9151c5dd454f4be4687e33c60da28508, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -107,7 +106,6 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SensorValue: 30
-    - _Sensor_value: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
@@ -117,8 +115,6 @@ Material:
     - _Surface: 0
     - _UVSec: 0
     - _ZWrite: 1
-    - _audioLevel: 0
-    - _pixal_size: 256
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
@@ -129,7 +125,7 @@ Material:
     - _TUI_0: {r: 0, g: 0, b: 0, a: 0}
     - _TUI_1: {r: 0, g: 0, b: 0, a: 0}
     - _TUI_2: {r: 0, g: 0, b: 0, a: 0}
-    - _debug: {r: 1, g: 0.1, b: 0.5, a: 0}
+    - _debug: {r: 1, g: 0.42, b: 0.65, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2557712408490825606
 MonoBehaviour:
