@@ -48,6 +48,7 @@ Please note that you have three different setup options here (you can enable eac
 - Here is the instruction on how to install the Universal Render Pipeline into an existing Project: https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/InstallURPIntoAProject.html
 ![GraphShader](UnityScreenshot02.png)
 - Please note I provided two examples for Graph Shader responding to UltraSonic values. If you use "Transition between two videos" you can use the sensor value to switch and fade and out between two videos (render textures). Please note there are too values you can change to achieve desired effect. Under inspector you can change "Smooth Value": The larger the number it is faster responding to the transition. You can also change the "Switching Offset" in the Inspector to a desired value to fine tune the distance in which the fading between two videos are taking place.
+- 
 ![GraphShader](Transitioningvideo.gif)
 ![GraphShader](ShaderGraphTransitioning.png)
 
