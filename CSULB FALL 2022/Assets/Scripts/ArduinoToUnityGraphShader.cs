@@ -17,6 +17,9 @@ public class ArduinoToUnityGraphShader : MonoBehaviour
     bool _button2Pressed = false;
     int _ultrasonicDistanceCm = 0;
 
+    float _smoothedUltrasonicDistance = 0;
+    [SerializeField] float _smoothValue = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +54,9 @@ public class ArduinoToUnityGraphShader : MonoBehaviour
             _videoPlayer.clip = _videoClips[3];
         }
 
-        _material.SetFloat(_shaderId, _ultrasonicDistanceCm);
+        _smoothedUltrasonicDistance = Mathf.MoveTowards(_smoothedUltrasonicDistance, _ultrasonicDistanceCm, Time.deltaTime * _smoothValue);
+        _material.SetFloat(_shaderId, _smoothedUltrasonicDistance);
+
     }
 
     void OnGUI()
