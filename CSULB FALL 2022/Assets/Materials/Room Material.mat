@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Room Material
-  m_Shader: {fileID: -6465566751694194690, guid: f42668ce0de2cc84f99bf3a48af98b27, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9ede314b1a167d34980d43fb47237f92, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _FLIPBOOKBLENDING_OFF
@@ -66,11 +66,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _VideoOne:
-        m_Texture: {fileID: 8400000, guid: 9151c5dd454f4be4687e33c60da28508, type: 2}
+        m_Texture: {fileID: 8400000, guid: 52498206795452341aaeea5fa79c0654, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _VideoTwo:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8400000, guid: 9151c5dd454f4be4687e33c60da28508, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -88,6 +88,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _Audio: 0
+    - _AudioLevel: 1
     - _Blend: 0
     - _BlendOp: 0
     - _BumpScale: 1
@@ -131,10 +133,10 @@ Material:
     - _pixal_size: 256
     - _shifting: -50
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _TUI_0: {r: 0, g: 0, b: 0, a: 0}
