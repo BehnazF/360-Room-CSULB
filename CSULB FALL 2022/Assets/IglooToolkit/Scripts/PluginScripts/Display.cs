@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-namespace Igloo {
+
+namespace Igloo
+{
     [ExecuteInEditMode]
     public class Display : MonoBehaviour
     {
@@ -12,13 +15,13 @@ namespace Igloo {
         public DisplayManager displayManager;
         public GameObject cameraPrefab;
 
-        public enum IglooCubemapFace {Left,Front,Right,Back,Down,Up}
+        public enum IglooCubemapFace { Left, Front, Right, Back, Down, Up }
         public IglooCubemapFace iglooCubemapFace;
         //public int cubemapFace;
 
         [SerializeField]
-        protected  Dictionary<Igloo.EYE, Camera> activeCameras;
-        public  Dictionary<Igloo.EYE, Camera> GetActiveCameras() {return activeCameras;}
+        protected Dictionary<Igloo.EYE, Camera> activeCameras;
+        public Dictionary<Igloo.EYE, Camera> GetActiveCameras() { return activeCameras; }
 
         /// <summary>
         /// Returns a list of the Camera Components. 
@@ -26,9 +29,11 @@ namespace Igloo {
         /// If Display is not 3D there will be 1 camera; center
         /// </summary>
         /// <returns></returns>
-        public List<Camera> GetCameras() {
+        public List<Camera> GetCameras()
+        {
             List<Camera> cams = new List<Camera>();
-            foreach (var cam in activeCameras) {
+            foreach (var cam in activeCameras)
+            {
                 cams.Add(cam.Value);
             }
             return cams;
@@ -39,9 +44,13 @@ namespace Igloo {
         public RenderTexture rightTexture = null;
 
         protected float fov;
-        public virtual float FOV {
+        public virtual float FOV
+        {
             get { return fov; }
-            set { foreach (var cam in activeCameras) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
                     cam.Value.fieldOfView = value;
                 }
                 fov = value;
@@ -49,10 +58,13 @@ namespace Igloo {
         }
 
         protected float nearClipPlane = 0.01f;
-        public float NearClipPlane {
+        public float NearClipPlane
+        {
             get { return nearClipPlane; }
-            set {
-                foreach (var cam in activeCameras) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
                     cam.Value.nearClipPlane = value;
                 }
                 nearClipPlane = value;
@@ -60,10 +72,13 @@ namespace Igloo {
         }
 
         protected float farClipPlane = 1000.0f;
-        public float FarClipPlane {
+        public float FarClipPlane
+        {
             get { return farClipPlane; }
-            set {
-                foreach (var cam in activeCameras) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
                     cam.Value.farClipPlane = value;
                 }
                 farClipPlane = value;
@@ -75,14 +90,18 @@ namespace Igloo {
         // Value set from settings file and should not be modified during runtime 
         private bool isRendering;
 
-        public bool SetRendering {
+        public bool SetRendering
+        {
             get { return isRendering; }
-            set {
-                if (isRendering) {
-                    foreach (var cam in activeCameras) {
+            set
+            {
+                if (isRendering)
+                {
+                    foreach (var cam in activeCameras)
+                    {
                         cam.Value.enabled = value;
                     }
-                }                   
+                }
             }
         }
 
@@ -90,30 +109,38 @@ namespace Igloo {
         public bool Is3D { get { return is3D; } }
 
         protected bool isRenderTextures;
-        public bool IsRenderTextures {get{ return IsRenderTextures; } }
+        public bool IsRenderTextures { get { return IsRenderTextures; } }
 
         protected Vector2Int renderTextureSize;
         public Vector2Int RenderTextureSize { get { return renderTextureSize; } }
 
         protected Rect viewPortRect;
-        public Rect ViewportRect {
+        public Rect ViewportRect
+        {
             get { return viewPortRect; }
-            set {
-                foreach (var cam in activeCameras) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
                     cam.Value.rect = value;
                 }
                 viewPortRect = value;
             }
         }
         protected bool isFisheye;
-        public bool IsFisheye {
+        public bool IsFisheye
+        {
             get { return isFisheye; }
-            set {
-                foreach (var cam in activeCameras) {
-                    if (value) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
+                    if (value)
+                    {
                         if (cam.Value.gameObject.GetComponent<Fisheye>() == null) cam.Value.gameObject.AddComponent<Fisheye>();
                     }
-                    else if (!value) {
+                    else if (!value)
+                    {
                         if (cam.Value.gameObject.GetComponent<Fisheye>()) Destroy(gameObject.GetComponent<Fisheye>());
                     }
                 }
@@ -121,11 +148,15 @@ namespace Igloo {
             }
         }
         protected Vector2 fisheyeStrength;
-        public Vector2 FisheyeStrength {
+        public Vector2 FisheyeStrength
+        {
             get { return fisheyeStrength; }
-            set {
-                foreach (var cam in activeCameras) {
-                    if (cam.Value.gameObject.GetComponent<Fisheye>() != null) {
+            set
+            {
+                foreach (var cam in activeCameras)
+                {
+                    if (cam.Value.gameObject.GetComponent<Fisheye>() != null)
+                    {
                         cam.Value.gameObject.GetComponent<Fisheye>().strengthX = value.x;
                         cam.Value.gameObject.GetComponent<Fisheye>().strengthX = value.x;
                     }
@@ -142,20 +173,24 @@ namespace Igloo {
         protected float halfWidth() { return viewportWidth * 0.5f; }
         protected float halfHeight() { return viewportHeight * 0.5f; }
 
-        public Vector3 UpperRight   { get { return transform.localToWorldMatrix * new Vector4(halfWidth(), halfHeight(), 0.0f, 1.0f); } }
-        public Vector3 UpperLeft    { get { return transform.localToWorldMatrix * new Vector4(-halfWidth(), halfHeight(), 0.0f, 1.0f); } }       
-        public Vector3 LowerLeft    { get { return transform.localToWorldMatrix * new Vector4(-halfWidth(), -halfHeight(), 0.0f, 1.0f); } }       
-        public Vector3 LowerRight   { get { return transform.localToWorldMatrix * new Vector4(halfWidth(), -halfHeight(), 0.0f, 1.0f); } }
+        public Vector3 UpperRight { get { return transform.localToWorldMatrix * new Vector4(halfWidth(), halfHeight(), 0.0f, 1.0f); } }
+        public Vector3 UpperLeft { get { return transform.localToWorldMatrix * new Vector4(-halfWidth(), halfHeight(), 0.0f, 1.0f); } }
+        public Vector3 LowerLeft { get { return transform.localToWorldMatrix * new Vector4(-halfWidth(), -halfHeight(), 0.0f, 1.0f); } }
+        public Vector3 LowerRight { get { return transform.localToWorldMatrix * new Vector4(halfWidth(), -halfHeight(), 0.0f, 1.0f); } }
 
-        public virtual void Awake() {
+        public virtual void Awake()
+        {
             if (Application.isPlaying && transform.parent == null && IglooManager.Instance.dontDestroyOnLoad) DontDestroyOnLoad(this.gameObject);
         }
 
-        public virtual void LateUpdate() {
+        public virtual void LateUpdate()
+        {
             // update camera projection matrices for offaxis projection
-            if (isOffAxis) {
+            if (isOffAxis)
+            {
                 // Old Method
-                foreach (var cam in activeCameras) {
+                foreach (var cam in activeCameras)
+                {
                     cam.Value.projectionMatrix = Utils.getAsymProjMatrix(LowerLeft, LowerRight, UpperLeft, cam.Value.gameObject.transform.position, headManager.NearClipPlane, headManager.FarClipPlane);
                     cam.Value.gameObject.transform.rotation = transform.rotation;
                 }
@@ -187,42 +222,46 @@ namespace Igloo {
             }
         }
 
-        public virtual void SetSettings(DisplayItem settings) {
-            Name        = settings.Name;
+        public virtual void SetSettings(DisplayItem settings)
+        {
+            Name = settings.Name;
             isRendering = settings.isRendering;
-            is3D        = settings.is3D;
-            isOffAxis   = settings.isOffAxis;
-            fov         = settings.fov;
-            isFisheye   = settings.isFisheye;
-            isRenderTextures    = settings.isRenderTextures;
-            iglooCubemapFace    = (IglooCubemapFace)settings.cubemapFace;
+            is3D = settings.is3D;
+            isOffAxis = settings.isOffAxis;
+            fov = settings.fov;
+            isFisheye = settings.isFisheye;
+            isRenderTextures = settings.isRenderTextures;
+            iglooCubemapFace = (IglooCubemapFace)settings.cubemapFace;
 
-            if (settings.nearClipPlane != 0) nearClipPlane                          = settings.nearClipPlane;
-            if (settings.farClipPlane != 0) farClipPlane                            = settings.farClipPlane;
-            if (settings.cameraRotation != null) camRotation                        = settings.cameraRotation.Vector3;
-            if (settings.viewportRotation != null) this.transform.localEulerAngles  = settings.viewportRotation.Vector3;
-            if (settings.renderTextureSize != null) renderTextureSize               = settings.renderTextureSize.Vector2Int;
-            if (settings.viewportPosition != null) this.transform.localPosition     = settings.viewportPosition.Vector3;
-            if (settings.viewportSize != null) {
-                viewportWidth   = settings.viewportSize.x;
-                viewportHeight  = settings.viewportSize.y;
+            if (settings.nearClipPlane != 0) nearClipPlane = settings.nearClipPlane;
+            if (settings.farClipPlane != 0) farClipPlane = settings.farClipPlane;
+            if (settings.cameraRotation != null) camRotation = settings.cameraRotation.Vector3;
+            if (settings.viewportRotation != null) this.transform.localEulerAngles = settings.viewportRotation.Vector3;
+            if (settings.renderTextureSize != null) renderTextureSize = settings.renderTextureSize.Vector2Int;
+            if (settings.viewportPosition != null) this.transform.localPosition = settings.viewportPosition.Vector3;
+            if (settings.viewportSize != null)
+            {
+                viewportWidth = settings.viewportSize.x;
+                viewportHeight = settings.viewportSize.y;
             }
-            if (settings.fisheyeStrength != null) {
+            if (settings.fisheyeStrength != null)
+            {
                 fisheyeStrength.x = settings.fisheyeStrength.x;
                 fisheyeStrength.y = settings.fisheyeStrength.y;
             }
 
         }
 
-        public virtual DisplayItem GetSettings() {
+        public virtual DisplayItem GetSettings()
+        {
             DisplayItem settings = new DisplayItem();
             settings.Name = Name;
             settings.isRendering = isRendering;
-            settings.cameraRotation = new Vector3Item(camRotation); 
+            settings.cameraRotation = new Vector3Item(camRotation);
             settings.is3D = is3D;
             settings.isOffAxis = isOffAxis;
             settings.viewportPosition = new Vector3Item(this.transform.localPosition);
-            settings.viewportSize = new Vector2Item(viewportWidth,viewportHeight);
+            settings.viewportSize = new Vector2Item(viewportWidth, viewportHeight);
             settings.fov = fov;
             settings.isFisheye = isFisheye;
             settings.isRenderTextures = isRenderTextures;
@@ -232,13 +271,14 @@ namespace Igloo {
             settings.farClipPlane = farClipPlane;
             settings.fisheyeStrength = new Vector2Item(fisheyeStrength);
             if (renderTextureSize != null) settings.renderTextureSize = new Vector2IntItem(renderTextureSize);
-           
+
             return settings;
         }
 
-        public virtual void InitialiseCameras() {}
+        public virtual void InitialiseCameras() { }
 
-        public virtual void SetupDisplay() {
+        public virtual void SetupDisplay()
+        {
             activeCameras = new Dictionary<Igloo.EYE, Camera>();
 
             // Creates Camera objects and adds them to the activeCameras dictionary
@@ -247,8 +287,9 @@ namespace Igloo {
             IsFisheye = isFisheye;
             FisheyeStrength = fisheyeStrength;
 
-            foreach (var cam in activeCameras) {
-                if (!isOffAxis) cam.Value.fieldOfView = fov;               
+            foreach (var cam in activeCameras)
+            {
+                if (!isOffAxis) cam.Value.fieldOfView = fov;
                 cam.Value.enabled = isRendering;
                 cam.Value.nearClipPlane = nearClipPlane;
                 cam.Value.farClipPlane = farClipPlane;
@@ -258,22 +299,28 @@ namespace Igloo {
                 var cameraData = cam.Value.GetUniversalAdditionalCameraData();
                 cameraData.renderPostProcessing = true;
 #endif
-                if (cam.Key == EYE.LEFT) {
-                    if (isRenderTextures) {
+                if (cam.Key == EYE.LEFT)
+                {
+                    if (isRenderTextures)
+                    {
                         leftTexture = new RenderTexture(renderTextureSize.x, renderTextureSize.y, 0);
                         leftTexture.name = gameObject.name + "_" + cam.Key;
                         cam.Value.targetTexture = leftTexture;
                     }
                 }
-                else if (cam.Key == EYE.CENTER){
-                    if (isRenderTextures) {
+                else if (cam.Key == EYE.CENTER)
+                {
+                    if (isRenderTextures)
+                    {
                         centerTexture = new RenderTexture(renderTextureSize.x, renderTextureSize.y, 0);
                         centerTexture.name = gameObject.name + "_" + cam.Key;
                         cam.Value.targetTexture = centerTexture;
                     }
                 }
-                else if (cam.Key == EYE.RIGHT) {
-                    if (isRenderTextures) {
+                else if (cam.Key == EYE.RIGHT)
+                {
+                    if (isRenderTextures)
+                    {
                         rightTexture = new RenderTexture(renderTextureSize.x, renderTextureSize.y, 0);
                         rightTexture.name = gameObject.name + "_" + cam.Key;
                         cam.Value.targetTexture = rightTexture;
@@ -284,13 +331,16 @@ namespace Igloo {
             headManager.OnHeadSettingsChange += HeadSettingsChanges;
         }
 
-        void HeadSettingsChanges() {
-            foreach (var cam in activeCameras) {
+        void HeadSettingsChanges()
+        {
+            foreach (var cam in activeCameras)
+            {
                 headManager.ApplyCameraSettings(cam.Value, cam.Key);
             }
         }
 
-        void EditorDraw() {
+        void EditorDraw()
+        {
             var mat = transform.localToWorldMatrix;
             Gizmos.color = Color.white;
             Gizmos.DrawLine(UpperRight, UpperLeft);
@@ -299,12 +349,15 @@ namespace Igloo {
             Gizmos.DrawLine(LowerRight, UpperRight);
         }
 
-        void OnDrawGizmos() {
-            if (isOffAxis)EditorDraw();
+        void OnDrawGizmos()
+        {
+            if (isOffAxis) EditorDraw();
         }
 
-        private void OnDrawGizmosSelected() {
-            if (isOffAxis) {
+        private void OnDrawGizmosSelected()
+        {
+            if (isOffAxis)
+            {
                 var mat = transform.localToWorldMatrix;
                 Vector3 right = mat * new Vector4(halfWidth() * 0.75f, 0.0f, 0.0f, 1.0f);
                 Vector3 up = mat * new Vector4(0.0f, halfHeight() * 0.75f, 0.0f, 1.0f);
@@ -315,9 +368,12 @@ namespace Igloo {
             }
         }
 
-        public virtual void OnDestroy() {
-            if (activeCameras != null) {
-                foreach (var cam in activeCameras) {
+        public virtual void OnDestroy()
+        {
+            if (activeCameras != null)
+            {
+                foreach (var cam in activeCameras)
+                {
                     if (cam.Value != null) DestroyImmediate(cam.Value.gameObject);
                 }
             }

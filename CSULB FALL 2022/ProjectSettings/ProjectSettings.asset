@@ -715,7 +715,7 @@ PlayerSettings:
     PS4: EXTOSC
     PS5: EXTOSC
     Stadia: EXTOSC
-    Standalone: EXTOSC
+    Standalone: EXTOSC;IGLOO_URP
     WebGL: EXTOSC
     Windows Store Apps: EXTOSC
     XboxOne: EXTOSC
