@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
@@ -551,6 +551,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e324f79daed2074da82c61e010b611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tableMinMax:
+  - {x: 0, y: 0.43}
+  - {x: 0.78, y: 0.92}
+  _roomMinMax:
+  - {x: 0, y: 0.33}
+  - {x: 0.88, y: 0.89}
   _oscReceiver: {fileID: 364890395}
   _TUIinfo0: _TUI_0
   _TUIinfo1: _TUI_1
@@ -558,7 +564,13 @@ MonoBehaviour:
   _TUIinfo3: _TUI_3
   _TUIinfo4: _TUI_4
   _TUIinfo5: _TUI_5
-  _classIDs: 040000000500000008000000090000000000000001000000
+  _TUIinfo6: _TUI_6
+  _TUIinfo7: _TUI_7
+  _TUIinfo8: _TUI_8
+  _TUIinfo9: _TUI_9
+  _TUIinfo10: _TUI_10
+  _TUIinfo11: _TUI_11
+  _classIDs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   _fadeScale: 1
   _material: {fileID: 2100000, guid: eec9cc6cb59c8ab41aeebc1702b83f29, type: 2}
 --- !u!114 &364890395
@@ -613,14 +625,21 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!81 &364890398
-AudioListener:
+--- !u!114 &364890401
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364890393}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cd78312ebbdb14eb35dcf8fd305029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetCamera: Teslong Camera
+  _texturePropertyName: _targetCamera
+  _material: {fileID: 2100000, guid: eec9cc6cb59c8ab41aeebc1702b83f29, type: 2}
 --- !u!1 &526147733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc415e76dd07c84e960e5e6c8f8c2c3, type: 3}
@@ -1588,7 +1607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1575162758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,6 +2361,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e324f79daed2074da82c61e010b611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tableMinMax:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  _roomMinMax:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   _oscReceiver: {fileID: 1921342703}
   _TUIinfo0: 
   _TUIinfo1: 
@@ -2349,6 +2374,12 @@ MonoBehaviour:
   _TUIinfo3: 
   _TUIinfo4: 
   _TUIinfo5: 
+  _TUIinfo6: 
+  _TUIinfo7: 
+  _TUIinfo8: 
+  _TUIinfo9: 
+  _TUIinfo10: 
+  _TUIinfo11: 
   _classIDs: 000000000000000000000000
   _fadeScale: 1
   _material: {fileID: 0}

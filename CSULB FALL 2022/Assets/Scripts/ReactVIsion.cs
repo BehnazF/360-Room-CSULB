@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,12 +9,15 @@ using UnityEngine;
 
 public class ReactVIsion : MonoBehaviour
 {
-    Vector4[] _TUIinfo = new Vector4[6];
-
+    Vector4[] _TUIinfo = new Vector4[12];
+    [SerializeField] Vector2[] _tableMinMax = new Vector2[2];
+    [SerializeField] Vector2[] _roomMinMax = new Vector2[2];
     [SerializeField] OSCReceiver _oscReceiver;
-    [SerializeField] string _TUIinfo0, _TUIinfo1, _TUIinfo2, _TUIinfo3, _TUIinfo4, _TUIinfo5;
+    [SerializeField]
+    string _TUIinfo0, _TUIinfo1, _TUIinfo2, _TUIinfo3, _TUIinfo4, _TUIinfo5,
+    _TUIinfo6, _TUIinfo7, _TUIinfo8, _TUIinfo9, _TUIinfo10, _TUIinfo11;
 
-    [SerializeField] int[] _classIDs = new int[6];
+    [SerializeField] int[] _classIDs = new int[12];
     [SerializeField] float _fadeScale = 1;
 
     int _TUIinfoID0;
@@ -22,6 +26,12 @@ public class ReactVIsion : MonoBehaviour
     int _TUIinfoID3;
     int _TUIinfoID4;
     int _TUIinfoID5;
+    int _TUIinfoID6;
+    int _TUIinfoID7;
+    int _TUIinfoID8;
+    int _TUIinfoID9;
+    int _TUIinfoID10;
+    int _TUIinfoID11;
 
     [SerializeField] Material _material;
 
@@ -36,6 +46,12 @@ public class ReactVIsion : MonoBehaviour
         _TUIinfoID3 = Shader.PropertyToID(_TUIinfo3);
         _TUIinfoID4 = Shader.PropertyToID(_TUIinfo4);
         _TUIinfoID5 = Shader.PropertyToID(_TUIinfo5);
+        _TUIinfoID6 = Shader.PropertyToID(_TUIinfo6);
+        _TUIinfoID7 = Shader.PropertyToID(_TUIinfo7);
+        _TUIinfoID8 = Shader.PropertyToID(_TUIinfo8);
+        _TUIinfoID9 = Shader.PropertyToID(_TUIinfo9);
+        _TUIinfoID10 = Shader.PropertyToID(_TUIinfo10);
+        _TUIinfoID11 = Shader.PropertyToID(_TUIinfo11);
     }
 
     private void gotTUIinfo(OSCMessage msg)
@@ -53,7 +69,10 @@ public class ReactVIsion : MonoBehaviour
             {
                 if (classID == _classIDs[i])
                 {
-                    _TUIinfo[i] = new Vector4(1, x, y, angle);
+                    _TUIinfo[i] = new Vector4(1,
+                        Mathf.Lerp(_roomMinMax[0].x, _roomMinMax[1].x, Mathf.InverseLerp(_tableMinMax[0].x, _tableMinMax[1].x, x)),
+                        Mathf.Lerp(_roomMinMax[0].y, _roomMinMax[1].y, Mathf.InverseLerp(_tableMinMax[0].y, _tableMinMax[1].y, y)),
+                        angle);
                 }
             }
 
@@ -69,6 +88,12 @@ public class ReactVIsion : MonoBehaviour
         _material.SetVector(_TUIinfoID3, _TUIinfo[3]);
         _material.SetVector(_TUIinfoID4, _TUIinfo[4]);
         _material.SetVector(_TUIinfoID5, _TUIinfo[5]);
+        _material.SetVector(_TUIinfoID6, _TUIinfo[6]);
+        _material.SetVector(_TUIinfoID7, _TUIinfo[7]);
+        _material.SetVector(_TUIinfoID8, _TUIinfo[8]);
+        _material.SetVector(_TUIinfoID9, _TUIinfo[9]);
+        _material.SetVector(_TUIinfoID10, _TUIinfo[10]);
+        _material.SetVector(_TUIinfoID11, _TUIinfo[11]);
         for (int i = 0; i < _classIDs.Length; i++)
         {
             //Fade out calculation for videos

@@ -64,6 +64,10 @@ Material:
         m_Texture: {fileID: 8400000, guid: 9151c5dd454f4be4687e33c60da28508, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _targetCamera:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -124,12 +128,18 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0.125, g: 0.125, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _TUI_0: {r: 0, g: 0.7010097, b: 0.40630305, a: 6.198879}
-    - _TUI_1: {r: 0, g: 0.8186667, b: 0.48900664, a: 0.039473955}
-    - _TUI_2: {r: 0, g: 0.5882504, b: 0.17972744, a: 6.224829}
+    - _TUI_0: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_1: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_10: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_11: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_2: {r: 0, g: 0, b: 0, a: 0}
     - _TUI_3: {r: 0, g: 0, b: 0, a: 0}
     - _TUI_4: {r: 0, g: 0, b: 0, a: 0}
-    - _TUI_5: {r: 0, g: 0.7439494, b: 0.6598922, a: 6.2220674}
+    - _TUI_5: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_6: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_7: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_8: {r: 0, g: 0, b: 0, a: 0}
+    - _TUI_9: {r: 0, g: 0, b: 0, a: 0}
     - _debug: {r: 1, g: 0.42, b: 0.65, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2557712408490825606

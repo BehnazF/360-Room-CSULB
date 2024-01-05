@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/IglooToolkit/Scenes/Example 2 - Igloo Prefab.unity
     guid: ee572548075c25c4e9a2371575c1401d
+  - enabled: 1
+    path: Assets/Scene/IglooSetup.unity
+    guid: 447fc0d55755d1d4791ff9bef8f283e3
   m_configObjects: {}
